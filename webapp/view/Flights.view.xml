@@ -10,6 +10,10 @@
                 <ux:expandedHeading>
                     <Title id="title1" text="{Carrname}" level="H2"/>
                 </ux:expandedHeading>
+                <ux:navigationActions>
+                    <OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press=".onClose"
+                                           tooltip="Close" visible="{= ${device>/system/phone} }" />
+                </ux:navigationActions>
             </ux:ObjectPageDynamicHeaderTitle>
         </ux:headerTitle>
         <ux:headerContent>

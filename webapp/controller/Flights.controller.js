@@ -45,5 +45,11 @@ sap.ui.define([
                 var sPath = oElementBinding.getPath();
                 this.getOwnerComponent().oListSelector.selectAListItem(sPath);
             },
+
+            onClose: function () {
+                var oView = this.getView();
+                oView.getModel("mainView").setProperty("/layout", "OneColumn");
+                this.getRouter().navTo("Overflow", {}, true);
+            }
         });
     });

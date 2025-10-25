@@ -4,7 +4,9 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:f="sap.f">
-    <f:DynamicPage id="dynamicPageOverview" headerExpanded="true" toggleHeaderOnTitleClick="true">
+    <f:DynamicPage id="dynamicPageOverview" 
+                   headerExpanded="true" 
+                   toggleHeaderOnTitleClick="true">
         <f:content>
             <List id="list"
                   items="{/UX_C_Carrier_TP}"
@@ -12,13 +14,14 @@
                   growing="true"
                   growingThreshold="20"
                   growingScrollToLoad="true"
-                  mode="SingleSelectMaster"
+                  mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster' }"
                   selectionChange=".onSelect">
                 <items>
                     <ObjectListItem id="objectListItem"
                                     title="{Carrname}"
                                     intro="{Carrid}"
-                                    type="Inactive">
+                                    type="{= ${device>/system/phone} ? 'Active' : 'Inactive' }"
+                                    press=".onSelect">
                     </ObjectListItem>
                 </items>
             </List>
